@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    height: 100vh; /*	vh = 1% de la altura de la ventana gráfica.*/  
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reloj{
+    height: 500px;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+    background-image: url(https://www.freepngimg.com/thumb/clock/33735-6-clock-no-hands-clipart.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.agujaHora,.agujaMinuto,.agujaSeg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 5px;
+    background-color: rgb(0, 0, 0);
+    transform-origin: left;
+    border-radius: 50%;
+}
+
+.agujaHora{
+    animation: girar 86400s  linear infinite;
+    transform: rotate(-90deg);
+}
+
+.agujaMinuto{
+    animation: girar 3600s  linear infinite;
+    transform: rotate(-90deg);
+}
+
+.agujaSeg{
+    animation: girar 60s  linear infinite;
+    transform: rotate(-90deg);
+}
+
+@keyframes girar{    
+    0%{
+        transform: rotate(-90);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
